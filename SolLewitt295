@@ -1,0 +1,26 @@
+<?p5.js
+
+echo " TatiPilon-CCS16;
+
+function setup() {
+  createCanvas (800,800)
+  stroke (255);
+  noFill();
+}
+
+function draw() {
+  background (51);
+  rect (150,150,300,300);
+  ellipse (120,120,300,300);
+  rect (300,300,300,300);
+  ellipse (620,620, 300,300);
+  rect (600,600,400,300);
+  ellipse (320,320,200,100);
+  
+  if (isMousePressed){
+    var white = random (255);
+    var black = random (255);
+    fill (white,black);
+  }
+  
+}
