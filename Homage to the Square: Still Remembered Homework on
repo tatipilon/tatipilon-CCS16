@@ -1,0 +1,23 @@
+Homage to the Square: Still Remembered Homework on P5.js
+
+function setup() {
+  createCanvas(1000,1000);
+  background ('rgba(51,112,115,0.25)');
+}
+
+function draw() {
+  var darkgreen = color(51, 112,115);
+  background(darkgreen);
+//  background ('rgba(51,112,115,0.25)');
+  var yellow = color(223,185,56)
+  rect(100,100,850,650);
+  fill (yellow);
+// fill ('rgba(223,185,56,1)');
+  var darkyellow = color(127,87,17);
+  rect(200,250,650,455);
+  fill (darkyellow);
+// fill ('rgba(127,87,17,1)');
+  rect(400,350,300,300);
+  fill('rgba(252,224,54,1)');
+  
+}
