@@ -1,0 +1,62 @@
+Work of Art: Painterly Realism of a Football Player by Kazimir Malevich using P5.js
+
+
+function setup() {
+  createCanvas(400,600);
+  background('rgba(211,212,207,0.40)');
+}
+
+function draw(){
+ var brown = color(54,41,55)
+  noStroke();
+  fill(brown);
+  quad(168,2, 280, 30, 207, 183, 97, 160);
+
+//fill(('rgba(54,41,55,1)'))
+
+  var yellow = color(187,151,1)
+  noStroke();
+  fill(yellow);
+  quad(160, 315, 236, 320, 216, 426, 166, 425);
+  
+//fill(('rgba(187,151,1,1)'))
+ 
+  var blue = color(16,49,119)
+  noStroke();
+  fill(blue);
+  quad(56, 388, 285, 416, 285, 425, 50, 400);
+
+//fill(('rgba(16,49,119,1)'))
+
+  var darkbrown = color(26,26,26)
+  noStroke();
+  fill(darkbrown);
+  quad(78, 365, 142, 368, 142, 434, 80, 436);
+
+//fill(('rgba(26,26,26,1)'))
+  
+  noStroke();
+  fill(darkbrown);
+  quad(115, 473, 165, 440, 180, 465, 128, 494);
+  
+  var darkred = color (169,47,28)
+  noStroke();
+  fill(darkred);
+  quad(163, 479, 201, 476, 202, 492, 165,496);
+
+//fill(('rgba(169,47,28,1)'))
+  
+  noStroke();
+  fill(darkred);
+  quad(192, 496, 241, 498, 240, 502, 193, 501);
+  
+  var lightgreen = color(42,115,36);
+  noStroke();
+  fill(lightgreen);
+  ellipse(210,512,16,16);
+
+//fill(('rgba(42,115,36,1)'))
+
+}
+
+  
