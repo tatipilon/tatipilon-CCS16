@@ -1,0 +1,29 @@
+P5.js
+
+var x = 130;
+var y = 130;
+
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  background (204);
+}
+
+function draw() {
+
+	var d = dist(windowWidth/2, windowHeight/2, mouseX, mouseY);
+
+//d is the lenght of the line
+//the distance from point 1 to point 2
+
+  	fill (random(1, 255), random(1, 255), random(1, 255));
+
+ //random changes colors from 1 to 255
+
+  	rect(x,y,d,d);
+  	ellipse (x, y, d, d);
+  
+  	
+
+
+}
