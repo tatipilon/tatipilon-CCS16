@@ -1,0 +1,11 @@
+Week 3 second exercise
+
+function setup() {
+  createCanvas(windowWidth,windowHeight)
+}
+function draw(){
+ for (var i=1; i<=10 ; i++){
+ fill(0);
+ rect (i*20,0,8,10);
+}
+}
