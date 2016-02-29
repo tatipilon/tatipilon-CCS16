@@ -1,0 +1,75 @@
+Josef Albers Interaction of Colors XVIII - 3 using P5.js
+
+function setup() {
+  createCanvas(600,800);
+  background (255,255,255);
+}
+
+// Josef Albers recreation of " save its own face"
+
+function draw() {
+//sand rectangle
+  noStroke();
+  fill(210,147,93);
+  quad(0,0,296,0,310,320,0,345);
+// shape inside first pink rect second yellow
+  fill(164,69,92);
+  quad(53,64,210,47,242,289,51,301);
+  fill(210,147,93);
+  quad(84,70,186,59,210,268,79,278);
+  
+//brown rectangle
+  fill(109,65,56);
+  quad(0,345,293,320,252,493,0,474);
+// shape inside first blue rect second brown
+  fill(53,67,76);
+  quad(39,381,212,383,212,451,32,451);
+  fill(109,65,56);
+  quad(53,393,193,393,193,441,46,442);
+
+//lightblue rectangle
+  fill(101,148,164);
+  quad(0,474,308,497,268,800,0,800);
+  
+//green rectangle
+  fill(59,99,75);
+  quad(296,0,800,0,800,103,296,105);
+// shape inside rect red
+  fill(151,57,49);
+  quad(345,54,800,54,800,65,350,65);
+  
+//pink rectangle
+  fill(234,84,93);
+  quad(273,102,800,96,800,279,273,256 );
+// shape inside rect blue
+  fill(77,104,125);
+  quad(333,144,501,158,494,233,340,233);
+  
+//dark blue rectangle
+  fill(75,99,127);
+  quad(308,258,800,279,800,534,249,505 );
+  
+//last rectangle
+  fill(209,83,95);
+  quad(306,508,800,532,800,800,267,800 );
+// shape inside first green rect second pink
+  fill(120,145,88);
+  quad(359,577,515,566,525,661,373,669);
+  fill(209,83,95);
+  quad(375,584,490,579,490,651,385,656);
+
+// red ellipse inside the dark blue rect
+  fill(193,75,65);
+  ellipse(528,388,150,70);
+// blue arc to cover imperfections 
+  fill(75,99,127);
+  arc(488,423,190,200,PI,PI+QUARTER_PI);
+//red line rect inside light blue rect
+beginShape();
+  fill(193,75,65);
+  vertex(0,614);
+  vertex(294,630);
+  vertex(287,680);
+  vertex(0,650);
+  endShape();
+  }
