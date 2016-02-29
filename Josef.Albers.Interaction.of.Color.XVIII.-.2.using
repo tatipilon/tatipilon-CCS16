@@ -1,0 +1,32 @@
+Josef Albers Interaction of Color  XVIII - 2 using P5.js
+
+function setup() {
+  createCanvas(1000,1000);
+  background (255,255,255);
+
+}
+  function draw() {
+//rectangles from top down
+  noStroke();
+  fill(47,107,108);
+  quad(0,0,1000,0,1000,250,0,250);
+  fill(95,203,175);
+  quad(0,250,1000,250,1000,500,0,500);
+  fill(230,204,171);
+  quad(0,500,1000,500,1000,750,0,750);
+  fill(2,95,100);
+  quad(0,750,1000,750,1000,1000,0,1000);
+  
+ // psychedelic circles
+
+ beginShape();
+ for (var x = 0; x <= 1000; x = x + 100){
+  for (var y = 0; y <= 1000; y = y + 100) {
+  fill(59,random(84),47);
+  ellipse(50+x, y+45+mouseY,100,100);
+  }
+  
+  endShape()
+                           
+}
+}
