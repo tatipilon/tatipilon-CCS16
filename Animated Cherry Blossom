@@ -1,0 +1,56 @@
+// Animated Cherry Blossom 
+
+// canvas inspired by a spring triadic pallete using green, pink, and yellow
+// color interpolation to create a soothing background
+
+// call variable colorFrom to start color interpolation and use lerpedCol
+var colorFrom, colorTo;
+
+// rectStep gives the length of transition between the colors
+var rectStep = 5;
+
+function setup() {
+  createCanvas(500,500);
+  // colorMode HSB to experiment with saturation between colors
+  colorMode(HSB,360,100,100);
+  // framerate controls speed of mouseX & mouseY response 
+  frameRate(10)
+}
+
+function draw() {
+  background(200,30,100);
+  // background starts with soothing blue
+  colorFrom = color(210,30,100);
+  // color starts with soothing blue and interpolates to green
+  colorTo = color(140,30,100);
+  // soothing green color
+  for(var x=0; x < width; x += rectStep){
+  noStroke();
+  
+  var lerpAmt = map(x, 0, width, 0, 1.0);
+
+  var lerpedCol = lerpColor(colorFrom,colorTo,lerpAmt);    
+  fill(lerpedCol);
+  rect(x,0,rectStep,height);
+}
+  flower(mouseX,mouseY);
+}
+// flower function moves in the mouseX, mouseY direction
+// flower function using 
+// translate() to move drawing origin on x, y values and
+// create a petal then rotate () 72 degrees and repeat 
+// while spiraling around the flower center
+function flower(){
+  translate(mouseX,mouseY);
+  for(var i = 0; i<5; i++){
+  push();
+  rotate (TWO_PI * i/5);
+  //pink flower petals
+  fill(320,80,80)
+  ellipse(30,0,50,50);
+  fill(65,90,100);
+ //yellow flower sepal
+  ellipse(0,0,30,30);
+  pop();
+  }
+} 
