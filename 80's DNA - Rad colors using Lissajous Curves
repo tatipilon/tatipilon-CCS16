@@ -1,0 +1,59 @@
+// 80's DNA - Rad colors using Lissajous Curves
+//p5.js
+
+// Rad colors interpolating through geometric figures
+// High waveLength to show color interpolation
+var waveLengthOne = 100.0;
+var waveLengthTwo = 250.0;
+var pointCount = 0;
+var angle =0;
+var amplitude = 250;
+function setup(){
+  createCanvas(windowWidth,windowHeight);
+}
+function draw(){
+  if(pointCount > 1000){
+    noLoop();
+  }
+  background(0);
+  // colorMode in HSB to interpolate triadic colors
+  colorMode(HSB,360,30,100);
+  //frameRate assigns the speed the shapes are drawn
+  frameRate(25)
+  noFill();
+  strokeWeight(1);
+  //translate (w/2 & h/2) positions of the beggining of the drawing
+  //in the center of the canvas
+  translate(width/2,height/2);
+  beginShape();
+  for(var i=0; i < pointCount; i++){
+  angle = i / waveLengthOne * TWO_PI;
+  var y = sin(angle)* amplitude;
+   
+  angle = i / waveLengthTwo * TWO_PI;
+  var x = sin(angle)* amplitude;
+  // colorFrom - colorto = interpolates the color
+  // in the color wheel from pink (360) to light green
+  colorFrom = color(360,30,100);
+  
+  colorTo = color(50,30,100);
+
+  var lerpAmt = map(x, y, width, 0, 1.0);
+
+  var lerpedCol = lerpColor(colorFrom,colorTo,lerpAmt);    
+  fill(lerpedCol);
+  // shapes draw to display the color interpolation
+  // shapes draw based on the x,y position increasing 
+  //positively +20 to the right or negatively to the left
+  // when (-) x
+  ellipse(x,y-20,30,30);
+  triangle(x,y,40,60,40,20);
+  triangle(-x+20,-y+20,40,60,40,20);
+  triangle(x-20,y-20,20,40,60,40,20);
+  ellipse(x,y,30,30);
+  ellipse(-x+20,-y+20,30,30);
+  ellipse(x-20,y-20,30,30);
+  }
+  endShape();
+  pointCount++;
+}
