@@ -1,0 +1,69 @@
+//P5.js
+// I'm blooming
+// DOM elements on P5.js
+
+var slider;
+var angle = 0;
+var button;
+
+function setup(){
+  createCanvas(windowWidth,windowHeight);
+  
+  // creates button that once user clicks draws a flower randomly
+  btn = createButton("I'm bloomming");
+  btn.position(width/2,height/3);
+  btn.mousePressed(press),
+    
+// creates a ghost slider while interpolating rgb grade  
+  slider = createSlider(0,255,10);
+  slider.position(100,10);
+  
+// HSB color mode related to the flower function
+  colorMode(HSB,360,100,100);
+// framerate controls flower rotation speed
+  frameRate(50)
+
+}
+          
+
+function draw() {
+// use of sin to interpolate the colors on the slide
+  var b = map (sin(angle), -1, 1,0,255);
+  slider.value(b);
+  background(slider.value());
+  angle += 0.01
+  
+  // called a function to draw the initial flower in the middle of the canvas
+  flower(width/2,height/2);
+ 
+}
+
+function press(){
+  // user clicks the button and returns a flower in a new position
+  var pressed = flower(random(500,520)); 
+}
+
+function flower(x,y){
+  noStroke();
+  translate(x,y);
+  fill(0);
+  rotate(radians(frameCount%360));
+  for(var i = 0; i<5; i++){
+    push();
+    rotate (TWO_PI * i/5);
+    //pink flower petals
+    fill(320,80,80)
+    ellipse(30,0,50,50);
+    fill(65,90,100);
+    //yellow flower sepal
+    ellipse(0,0,30,30);
+    pop();
+  }
+ 
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+} 
+}
+
+
+
