@@ -1,0 +1,53 @@
+//P5.js
+// Sailboat with images in the background
+
+function setup() {
+  var canvas = createCanvas(windowWidth,windowHeight);
+  background(0);
+  
+  canvas.drop(gotFile);
+  
+}
+
+
+// Drops files on the canvas and displays on the screen
+
+function gotFile(file) {
+  createP(file.name +""+ file.size);
+  var img = createImg (file.data);
+  img.size(width,height);
+  
+  image (img,0,0,width,height);
+  
+}
+
+// Sailboat drawing
+
+function draw() {
+//first triangle
+  beginShape();
+  noStroke();
+  fill(254,0,2);
+  vertex(355,20);
+  vertex(230,318);
+  vertex(345,318);
+  endShape();
+
+//second triangle
+beginShape();
+  fill(0,1,252);
+  vertex(368,20);
+  vertex(530,305);
+  vertex(360,305);
+  endShape();
+  
+//bottom of the boat
+beginShape();
+  fill(255,255,1);
+  vertex(180,340);
+  vertex(560,340);
+  vertex(530,420);
+  vertex(220,420);
+  endShape();
+}
+
